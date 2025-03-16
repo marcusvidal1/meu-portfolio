@@ -63,16 +63,29 @@ document.addEventListener("DOMContentLoaded", function(){
     fetch('http://localhost:3000/perfil')
         .then(res => res.json())
         .then(data => {
+            // Atualizar perfil
             document.querySelector(".profile-name").textContent = data.nome;
             document.querySelector(".profile-description").textContent = data.descricao;
 
-            // Corrigir carregamento da imagem
+            // Atualizar a imagem de perfil
             const profileImage = document.querySelector(".profile-image");
             if (profileImage) {
                 profileImage.src = data.imagem;
                 profileImage.alt = `Foto de ${data.nome}`;
-                console.log("Imagem carregada:", data.imagem);
             }
+
+            // Atualizar links das redes sociais
+            document.querySelector(".instagram").href = data.redesSociais.instagram;
+            document.querySelector(".github").href = data.redesSociais.github;
+            document.querySelector(".linkedin").href = data.redesSociais.linkedin;
+            document.querySelector(".twitter").href = data.redesSociais.twitter;
+
+            // Atualizar Introdução
+            document.querySelector(".intro-title").textContent = data.introducao.titulo;
+            document.querySelector(".intro-subtitle").textContent = data.introducao.subtitulo;
+            document.querySelector(".about-me").innerHTML = data.introducao.sobreMim;
+            document.querySelector(".curriculo").href = data.introducao.links.curriculo;
+            document.querySelector(".projetos").href = data.introducao.links.projetos;
         })
         .catch(e => console.log("Erro ao buscar perfil:", e));
 });
