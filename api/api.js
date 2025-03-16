@@ -9,13 +9,25 @@ app.use(cors());
 // Dados do perfil para a página inicial
 const dadosPerfil = {
     nome: "Marcus Vidal",
-    descricao: "Sou aprendiz de programação apaixonado por tecnologia. Estou estudando front-end e criando meus primeiros projetos!",
-    imagem: "https://i.imgur.com/SEU_LINK_AQUI.png", // Altere para um link válido da sua imagem
+    descricao: "Sou aprendiz de programação apaixonado por tecnologia.",
+    imagem: "https://i.postimg.cc/kXNHF29g/foto.png", // Substitua pelo link correto da sua foto de perfil
     redesSociais: {
-        instagram: "https://instagram.com/seuUsuario",
-        github: "https://github.com/seuUsuario",
-        linkedin: "https://linkedin.com/in/seuUsuario",
-        twitter: "https://twitter.com/seuUsuario"
+        instagram: {
+            url: "https://instagram.com/seuUsuario",
+            icone: "https://i.postimg.cc/DwBYHRSV/instagram.png"
+        },
+        github: {
+            url: "https://github.com/seuUsuario",
+            icone: "https://i.postimg.cc/6p9mHB5L/github.png"
+        },
+        linkedin: {
+            url: "https://linkedin.com/in/seuUsuario",
+            icone: "https://i.postimg.cc/N0FPcbXK/linkedin.png"
+        },
+        twitter: {
+            url: "https://twitter.com/seuUsuario",
+            icone: "https://i.postimg.cc/GtwMvC5D/twitter.png"
+        }
     },
     introducao: {
         titulo: "Olá",
@@ -28,25 +40,26 @@ const dadosPerfil = {
     }
 };
 
+
 // Dados dos projetos para a página de projetos
 const projetos = [
     {
         titulo: "Secret Number",
-        descricao: "Jogo interativo de adivinhação.",
+        descricao: "Um jogo interativo de adivinhação onde o jogador tenta descobrir um número secreto gerado aleatoriamente. Com dicas a cada palpite, o desafio fica ainda mais envolvente!",
         tecnologia: ["HTML", "CSS", "JavaScript"],
-        imagem: "/assets/image_fx_ (14).jpg"
+        imagem: "https://i.postimg.cc/nzQRsz0Z/image-fx-14.png"
     },
     {
         titulo: "Jeep Wrangler",
-        descricao: "Site dedicado ao Jeep Wrangler.",
+        descricao: "Uma página dedicada ao icônico Jeep Wrangler, destacando seu design robusto, desempenho off-road e tecnologia avançada para os amantes de aventura.",
         tecnologia: ["HTML", "CSS"],
-        imagem: "/assets/image_fx_ (6).jpg"
+        imagem: "https://i.postimg.cc/xjMpnXX3/image-fx-6.png"
     },
     {
         titulo: "Santos Futebol Clube",
-        descricao: "Página dedicada ao Santos Futebol Clube.",
+        descricao: "Uma homenagem ao Santos FC, celebrando sua história, conquistas e paixão dos torcedores com um design envolvente e conteúdos especiais.",
         tecnologia: ["HTML", "CSS", "JavaScript"],
-        imagem: "/assets/image_fx_ (12).jpg"
+        imagem: "https://i.postimg.cc/brxmTB7B/image-fx-12.png"
     }
 ];
 

@@ -74,11 +74,18 @@ document.addEventListener("DOMContentLoaded", function(){
                 profileImage.alt = `Foto de ${data.nome}`;
             }
 
-            // Atualizar links das redes sociais
-            document.querySelector(".instagram").href = data.redesSociais.instagram;
-            document.querySelector(".github").href = data.redesSociais.github;
-            document.querySelector(".linkedin").href = data.redesSociais.linkedin;
-            document.querySelector(".twitter").href = data.redesSociais.twitter;
+            // Atualizar links e ícones das redes sociais
+            document.querySelector(".instagram").href = data.redesSociais.instagram.url;
+            document.querySelector(".instagram img").src = data.redesSociais.instagram.icone;
+
+            document.querySelector(".github").href = data.redesSociais.github.url;
+            document.querySelector(".github img").src = data.redesSociais.github.icone;
+
+            document.querySelector(".linkedin").href = data.redesSociais.linkedin.url;
+            document.querySelector(".linkedin img").src = data.redesSociais.linkedin.icone;
+
+            document.querySelector(".twitter").href = data.redesSociais.twitter.url;
+            document.querySelector(".twitter img").src = data.redesSociais.twitter.icone;
 
             // Atualizar Introdução
             document.querySelector(".intro-title").textContent = data.introducao.titulo;

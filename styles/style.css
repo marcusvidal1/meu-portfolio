@@ -68,10 +68,16 @@ body {
 }
 
 .profile-description {
-    margin-top: 9vh;
-    font-family: var(--fonte-primaria);
-    font-size: 2vh;
-}
+        text-align: center;  
+        display: flex;       
+        justify-content: center;  
+        flex-direction: column;
+        width: 100%;
+        padding-top: 9.5vh; 
+        font-size: 0.8rem;
+        font-family: var(--fonte-secundaria);
+    }
+
 
 .social-links {
     background-color: var(--cor-hover);
@@ -167,7 +173,7 @@ body {
     }
 
     .profile-name {
-        font-size: 4vh;
+        font-size: 20vh;
         margin-top: 10px;
     }
 
