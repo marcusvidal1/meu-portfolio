@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const main = document.querySelector(".main-container");
 
-            // Garante que o título e o parágrafo sempre permaneçam
+            
             main.innerHTML = `
                 <section class="intro-section">
                     <h1 class="main-title">Projetos</h1>
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </section>
             `;
 
-            // Adiciona os projetos dinamicamente abaixo do título
+            
             projetos.forEach(projeto => {
                 const projetoDiv = document.createElement("section");
                 projetoDiv.classList.add("project-card");

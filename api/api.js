@@ -6,11 +6,11 @@ const porta = 3000;
 
 app.use(cors());
 
-// Dados do perfil para a página inicial
+//página inicial
 const dadosPerfil = {
     nome: "Marcus Vidal",
     descricao: "Sou aprendiz de programação apaixonado por tecnologia.",
-    imagem: "https://i.postimg.cc/kXNHF29g/foto.png", // Substitua pelo link correto da sua foto de perfil
+    imagem: "https://i.postimg.cc/kXNHF29g/foto.png",
     redesSociais: {
         instagram: {
             url: "https://instagram.com/seuUsuario",
@@ -34,14 +34,15 @@ const dadosPerfil = {
         subtitulo: "Meu perfil e projetos",
         sobreMim: "Sou um desenvolvedor iniciante apaixonado por tecnologia. Estou me especializando em programação, focado no desenvolvimento front-end de páginas web. Busco aprimorar minhas habilidades e aprender novas tecnologias para criar interfaces modernas e responsivas.<br><br> Estou sempre pronto para desafios e em constante evolução. 🚀💻",
         links: {
-            curriculo: "#", // Atualize com o link do seu currículo
+            curriculo: "#",
             projetos: "about.html"
         }
     }
 };
 
 
-// Dados dos projetos para a página de projetos
+
+//página de projetos
 const projetos = [
     {
         titulo: "Secret Number",
@@ -63,7 +64,9 @@ const projetos = [
     }
 ];
 
-// Rota principal da API
+
+
+// Rota principal
 app.get('/', (req, res) => {
     res.json({ mensagem: "API do Portfólio funcionando!" });
 });
