@@ -43,6 +43,10 @@ const dadosPerfil = {
 
 
 //página de projetos
+const dadosProjetos = {
+    titulo: "Projetos",
+    descricao: "Bem-vindo à minha página de projetos! Aqui, compartilho minhas criações, desde sites interativos até designs inovadores. Cada projeto reflete minha paixão por tecnologia e criatividade, buscando sempre entregar experiências envolventes e funcionais."
+};
 const projetos = [
     {
         titulo: "Secret Number",
@@ -63,8 +67,6 @@ const projetos = [
         imagem: "https://i.postimg.cc/brxmTB7B/image-fx-12.png"
     }
 ];
-
-
 
 // Rota principal
 app.get('/', (req, res) => {
