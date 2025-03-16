@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #F6F6F6;
+    --cor-secundaria: #1B262C;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #3282B8;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #1B262C 40%, #0F4C75 40%);
+    color: var(--cor-primaria);
+    height: 100vh;
+    margin: 0;
+}
+
+.main-content {
+    height: 100%;
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vw;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: var(--cor-secundaria);
+    height: 57vh;
+    width: 20vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow: 0 0.4rem 1rem rgba(255, 255, 255, 0.2);
+}
+
+.introduction {
+    background-color: transparent;
+    height: 50vh;
+    width: 25vw;
+}
+
+.profile-image {
+    margin-top: 4vh;
+    height: 22vh;
+    border-radius: 50%;
+}
+
+.profile-name {
+    padding-top: 2.5vh;
+    font-family: var(--fonte-primaria);
+    text-align: center;
+    font-size: 3vh;
+    line-height: 1.5;
+}
+
+.profile-description {
+    margin-top: 9vh;
+    font-family: var(--fonte-primaria);
+    font-size: 2vh;
+}
+
+.social-links {
+    background-color: var(--cor-hover);
+    display: flex;
+    margin-top: 5.6vh;
+    width: 20vw;
+    height: 6vh;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    padding: 1vh 0;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.social-links img {
+    width: 1.8vw;
+    height: 1.8vw;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+.intro-title {
+    font-family: var(--fonte-primaria);
+    font-size: 10vh;
+    margin-left: 1vw;
+    color: var(--cor-terciaria);
+}
+
+.intro-subtitle {
+    font-family: var(--fonte-secundaria);
+    font-size: 3vh;
+    margin-left: 1.5vw;
+}
+
+.navigation-links {
+    margin-left: 1.5vw;
+    height: 5vh;
+    margin-top: 3vh;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 2vh;
+    border: 0.2vw solid var(--cor-terciaria);
+    border-radius: 1vw;
+    padding: 1vh 1.5vw;
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: var(--cor-hover);
+}
+
+.about-me {
+    margin-top: 2.8vh;
+    margin-left: 1.6vw;
+    font-family: var(--fonte-secundaria);
+    font-size: 2.7vh;
+    width: 35vw;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        height: auto;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .profile-card {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .profile-name {
+        font-size: 4vh;
+        margin-top: 10px;
+    }
+
+    .profile-description {
+        font-size: 2.5vh;
+        margin-top: 5px;
+    }
+
+    .social-links {
+        width: 80%;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+
+    .social-links img {
+        width: 35px;
+        height: 35px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .social-links img:hover {
+        transform: scale(1.2);
+    }
+
+    .introduction {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .intro-title {
+        font-size: 6vh;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .intro-subtitle {
+        font-size: 2.5vh;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navigation-links {
+        justify-content: center;
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 2vh;
+        padding: 8px 15px;
+    }
+
+    .about-me {
+        font-size: 2.3vh;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
