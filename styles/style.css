@@ -22,12 +22,12 @@ body {
     margin: 0;
 }
 
-.main-content {
+.conteudo-principal {
     height: 100%;
     width: 100%;
 }
 
-.content-container {
+.container-conteudo {
     display: flex;
     height: 100vh;
     align-items: center;
@@ -35,8 +35,8 @@ body {
     margin-right: 5vw;
 }
 
-/* Profile Card */
-.profile-card {
+/* Cartão de Perfil */
+.cartao-perfil {
     background-color: var(--cor-secundaria);
     height: 57vh;
     width: 20vw;
@@ -47,19 +47,19 @@ body {
     box-shadow: 0 0.4rem 1rem rgba(255, 255, 255, 0.2);
 }
 
-.introduction {
+.introducao {
     background-color: transparent;
     height: 50vh;
     width: 25vw;
 }
 
-.profile-image {
+.imagem-perfil {
     margin-top: 4vh;
     height: 22vh;
     border-radius: 50%;
 }
 
-.profile-name {
+.nome-perfil {
     padding-top: 2.5vh;
     font-family: var(--fonte-primaria);
     text-align: center;
@@ -67,19 +67,18 @@ body {
     line-height: 1.5;
 }
 
-.profile-description {
-        text-align: center;  
-        display: flex;       
-        justify-content: center;  
-        flex-direction: column;
-        width: 100%;
-        padding-top: 9.5vh; 
-        font-size: 0.8rem;
-        font-family: var(--fonte-secundaria);
-    }
+.descricao-perfil {
+    text-align: center;  
+    display: flex;       
+    justify-content: center;  
+    flex-direction: column;
+    width: 100%;
+    padding-top: 9.5vh; 
+    font-size: 0.8rem;
+    font-family: var(--fonte-secundaria);
+}
 
-
-.social-links {
+.redes-sociais {
     background-color: var(--cor-hover);
     display: flex;
     margin-top: 5.6vh;
@@ -93,30 +92,30 @@ body {
     border-bottom-left-radius: 10%;
 }
 
-.social-links img {
+.redes-sociais img {
     width: 1.8vw;
     height: 1.8vw;
     transition: transform 0.3s ease-in-out;
 }
 
-.social-links img:hover {
+.redes-sociais img:hover {
     transform: scale(1.2);
 }
 
-.intro-title {
+.titulo-introducao {
     font-family: var(--fonte-primaria);
     font-size: 10vh;
     margin-left: 1vw;
     color: var(--cor-terciaria);
 }
 
-.intro-subtitle {
+.subtitulo-introducao {
     font-family: var(--fonte-secundaria);
     font-size: 3vh;
     margin-left: 1.5vw;
 }
 
-.navigation-links {
+.links-navegacao {
     margin-left: 1.5vw;
     height: 5vh;
     margin-top: 3vh;
@@ -125,7 +124,7 @@ body {
     align-items: center;
 }
 
-.nav-link {
+.link-navegacao {
     font-size: 2vh;
     border: 0.2vw solid var(--cor-terciaria);
     border-radius: 1vw;
@@ -136,12 +135,12 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover {
+.link-navegacao:hover {
     color: white;
     background-color: var(--cor-hover);
 }
 
-.about-me {
+.sobre-mim {
     margin-top: 2.8vh;
     margin-left: 1.6vw;
     font-family: var(--fonte-secundaria);
@@ -150,7 +149,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .content-container {
+    .container-conteudo {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -160,29 +159,29 @@ body {
         padding: 20px 0;
     }
 
-    .profile-card {
+    .cartao-perfil {
         width: 90%;
         height: auto;
         padding: 20px;
     }
 
-    .profile-image {
+    .imagem-perfil {
         width: 120px;
         height: 120px;
         border-radius: 50%;
     }
 
-    .profile-name {
+    .nome-perfil {
         font-size: 4vh;
         margin-top: 10px;
     }
 
-    .profile-description {
+    .descricao-perfil {
         font-size: 2.5vh;
         margin-top: 5px;
     }
 
-    .social-links {
+    .redes-sociais {
         width: 80%;
         flex-wrap: wrap;
         height: auto;
@@ -190,46 +189,46 @@ body {
         margin-top: 10px;
     }
 
-    .social-links img {
+    .redes-sociais img {
         width: 35px;
         height: 35px;
         transition: transform 0.3s ease-in-out;
     }
 
-    .social-links img:hover {
+    .redes-sociais img:hover {
         transform: scale(1.2);
     }
 
-    .introduction {
+    .introducao {
         width: 90%;
         height: auto;
         padding: 20px;
     }
 
-    .intro-title {
+    .titulo-introducao {
         font-size: 6vh;
         margin-left: 0;
         text-align: center;
     }
 
-    .intro-subtitle {
+    .subtitulo-introducao {
         font-size: 2.5vh;
         margin-left: 0;
         text-align: center;
     }
 
-    .navigation-links {
+    .links-navegacao {
         justify-content: center;
         margin-top: 20px;
         gap: 15px;
     }
 
-    .nav-link {
+    .link-navegacao {
         font-size: 2vh;
         padding: 8px 15px;
     }
 
-    .about-me {
+    .sobre-mim {
         font-size: 2.3vh;
         width: 90%;
         margin: 20px auto;

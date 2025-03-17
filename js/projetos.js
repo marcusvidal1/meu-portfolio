@@ -1,101 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Criar botão para alternar o tema
-    const themeButton = document.createElement("button");
-    themeButton.innerText = "Alternar Tema";
-    themeButton.style.position = "fixed";
-    themeButton.style.top = "10px";
-    themeButton.style.right = "10px";
-    themeButton.style.padding = "10px";
-    themeButton.style.backgroundColor = "#22D4FD";
-    themeButton.style.color = "#1B262C";
-    themeButton.style.border = "none";
-    themeButton.style.cursor = "pointer";
-    themeButton.style.borderRadius = "5px";
-    themeButton.style.fontSize = "16px";
-    themeButton.style.fontWeight = "bold";
+    const botaoTema = document.createElement("button");
+    botaoTema.innerText = "Alternar Tema";
+    botaoTema.style.position = "fixed";
+    botaoTema.style.top = "10px";
+    botaoTema.style.right = "10px";
+    botaoTema.style.padding = "10px";
+    botaoTema.style.backgroundColor = "#22D4FD";
+    botaoTema.style.color = "#1B262C";
+    botaoTema.style.border = "none";
+    botaoTema.style.cursor = "pointer";
+    botaoTema.style.borderRadius = "5px";
+    botaoTema.style.fontSize = "16px";
+    botaoTema.style.fontWeight = "bold";
 
-    document.body.appendChild(themeButton);
+    document.body.appendChild(botaoTema);
 
     // Alternar o tema
-    themeButton.addEventListener("click", function () {
-        document.body.classList.toggle("light-mode");
-        document.querySelectorAll(".project-card").forEach(card => {
-            card.classList.toggle("card-light");
+    botaoTema.addEventListener("click", function () {
+        document.body.classList.toggle("modo-claro");
+        document.querySelectorAll(".cartao-projeto").forEach(cartao => {
+            cartao.classList.toggle("cartao-claro");
         });
-        document.querySelector(".main-title").classList.toggle("title-light");
+        document.querySelector(".titulo-principal").classList.toggle("titulo-claro");
 
         // Atualizar texto do botão
-        if (document.body.classList.contains("light-mode")) {
-            themeButton.innerText = "Modo Escuro";
-            themeButton.style.backgroundColor = "#0057FF";
-            themeButton.style.color = "white";
+        if (document.body.classList.contains("modo-claro")) {
+            botaoTema.innerText = "Modo Escuro";
+            botaoTema.style.backgroundColor = "#0057FF";
+            botaoTema.style.color = "white";
         } else {
-            themeButton.innerText = "Modo Claro";
-            themeButton.style.backgroundColor = "#22D4FD";
-            themeButton.style.color = "#1B262C";
+            botaoTema.innerText = "Modo Claro";
+            botaoTema.style.backgroundColor = "#22D4FD";
+            botaoTema.style.color = "#1B262C";
         }
     });
 
     // Estilos do modo claro
-    const lightModeStyle = document.createElement("style");
-    lightModeStyle.innerHTML = `
-        .light-mode {
+    const estiloModoClaro = document.createElement("style");
+    estiloModoClaro.innerHTML = `
+        .modo-claro {
             background: linear-gradient(to bottom, #F6F6F6 20%, #D9D9D9 100%) !important;
             color: black;
         }
-        .card-light {
+        .cartao-claro {
             background-color: white !important;
             color: black;
             box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
         }
-        .title-light {
+        .titulo-claro {
             color: #0057FF !important;
         }
     `;
-    document.head.appendChild(lightModeStyle);
+    document.head.appendChild(estiloModoClaro);
 });
-
-
-
-
-
 
 // Buscar projetos do GitHub e exibir na página
 document.addEventListener("DOMContentLoaded", function () {
-    const username = "marcusvidal1";
-    fetch(`https://api.github.com/users/${username}/repos`)
+    const usuario = "marcusvidal1";
+    fetch(`https://api.github.com/users/${usuario}/repos`)
         .then(response => response.json())
-        .then(repos => {
-            const main = document.querySelector(".main-container");
+        .then(repositorios => {
+            const principal = document.querySelector(".container-principal");
 
-            const apiTitle = document.createElement("h2");
-            apiTitle.textContent = "Meus Projetos no GitHub";
-            apiTitle.style.textAlign = "center";
-            apiTitle.style.margin = "50px 0 30px 0";
-            apiTitle.style.fontFamily = "Montserrat";
-            apiTitle.style.color = "#22D4FD";
-            main.appendChild(apiTitle);
+            const tituloAPI = document.createElement("h2");
+            tituloAPI.textContent = "Meus Projetos no GitHub";
+            tituloAPI.style.textAlign = "center";
+            tituloAPI.style.margin = "50px 0 30px 0";
+            tituloAPI.style.fontFamily = "Montserrat";
+            tituloAPI.style.color = "#22D4FD";
+            principal.appendChild(tituloAPI);
 
-            repos.forEach(repo => {
-                const projectSection = document.createElement("section");
-                projectSection.classList.add("project-card");
+            repositorios.forEach(repositorio => {
+                const secaoProjeto = document.createElement("section");
+                secaoProjeto.classList.add("cartao-projeto");
 
-                const projectText = document.createElement("div");
-                projectText.classList.add("project-text");
+                const textoProjeto = document.createElement("div");
+                textoProjeto.classList.add("texto-projeto");
 
-                const projectName = document.createElement("h1");
-                projectName.classList.add("project-title");
-                projectName.textContent = repo.name;
+                const nomeProjeto = document.createElement("h1");
+                nomeProjeto.classList.add("titulo-projeto");
+                nomeProjeto.textContent = repositorio.name;
 
-                const projectDescription = document.createElement("p");
-                projectDescription.classList.add("project-paragraph");
-                projectDescription.textContent = repo.description || "Projeto sem descrição.";
+                const descricaoProjeto = document.createElement("p");
+                descricaoProjeto.classList.add("paragrafo-projeto");
+                descricaoProjeto.textContent = repositorio.description || "Projeto sem descrição.";
 
-                projectText.appendChild(projectName);
-                projectText.appendChild(projectDescription);
+                textoProjeto.appendChild(nomeProjeto);
+                textoProjeto.appendChild(descricaoProjeto);
 
-                projectSection.appendChild(projectText);
-                main.appendChild(projectSection);
+                secaoProjeto.appendChild(textoProjeto);
+                principal.appendChild(secaoProjeto);
             });
         })
         .catch(error => {
@@ -103,43 +98,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     fetch('http://localhost:3000/projetos')
         .then(res => res.json())
         .then(projetos => {
             console.log("Projetos recebidos:", projetos);
 
-            const main = document.querySelector(".main-container");
+            const principal = document.querySelector(".container-principal");
 
-            
-            main.innerHTML = `
-                <section class="intro-section">
-                    <h1 class="main-title">Projetos</h1>
-                    <p class="main-paragraph">Bem-vindo à minha página de projetos! 
+            principal.innerHTML = `
+                <section class="secao-introducao">
+                    <h1 class="titulo-principal">Projetos</h1>
+                    <p class="paragrafo-principal">Bem-vindo à minha página de projetos! 
                         Aqui, compartilho minhas criações, desde sites interativos até designs inovadores. 
                         Cada projeto reflete minha paixão por tecnologia e criatividade, 
                         buscando sempre entregar experiências envolventes e funcionais.</p>
                 </section>
             `;
 
-            
             projetos.forEach(projeto => {
-                const projetoDiv = document.createElement("section");
-                projetoDiv.classList.add("project-card");
+                const divProjeto = document.createElement("section");
+                divProjeto.classList.add("cartao-projeto");
 
-                projetoDiv.innerHTML = `
-                    <div class="project-text">
-                        <h1 class="project-title">${projeto.titulo}</h1>
-                        <p class="project-paragraph">${projeto.descricao}</p>
+                divProjeto.innerHTML = `
+                    <div class="texto-projeto">
+                        <h1 class="titulo-projeto">${projeto.titulo}</h1>
+                        <p class="paragrafo-projeto">${projeto.descricao}</p>
                         <p><strong>Tecnologias:</strong> ${projeto.tecnologia.join(", ")}</p>
                     </div>
-                    <img class="project-image" src="${projeto.imagem}" alt="Imagem do projeto ${projeto.titulo}">
+                    <img class="imagem-projeto" src="${projeto.imagem}" alt="Imagem do projeto ${projeto.titulo}">
                 `;
 
-                main.appendChild(projetoDiv);
+                principal.appendChild(divProjeto);
             });
         })
         .catch(error => console.error("Erro ao buscar projetos:", error));

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //botão para alternar o tema
+    // Botão para alternar o tema
     const botaoTema = document.createElement("button");
     botaoTema.innerText = "Alternar Tema";
     botaoTema.style.position = "fixed";
@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(botaoTema);
 
-    //alternar o tema
+    // Alternar o tema
     botaoTema.addEventListener("click", function () {
-        document.body.classList.toggle("light-mode");
-        document.querySelector(".profile-card").classList.toggle("card-light");
-        document.querySelector(".intro-title").classList.toggle("title-light");
+        document.body.classList.toggle("modo-claro");
+        document.querySelector(".cartao-perfil").classList.toggle("cartao-claro");
+        document.querySelector(".titulo-introducao").classList.toggle("titulo-claro");
 
-        //texto do botão
-        if (document.body.classList.contains("light-mode")) {
+        // Texto do botão
+        if (document.body.classList.contains("modo-claro")) {
             botaoTema.innerText = "Modo Escuro";
             botaoTema.style.backgroundColor = "#0057FF";
             botaoTema.style.color = "white";
@@ -34,44 +34,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    //estilos do modo claro
+    // Estilos do modo claro
     const estiloTemaClaro = document.createElement("style");
     estiloTemaClaro.innerHTML = `
-        .light-mode {
+        .modo-claro {
             background: linear-gradient(to right, #F6F6F6 40%, #D9D9D9 40%) !important;
             color: black;
         }
-        .card-light {
+        .cartao-claro {
             background-color: white !important;
             color: black;
             box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
         }
-        .title-light {
+        .titulo-claro {
             color: #0057FF !important;
         }
     `;
     document.head.appendChild(estiloTemaClaro);
 });
 
-
-
-
-
-
-
+//api
 document.addEventListener("DOMContentLoaded", function(){
     fetch('http://localhost:3000/perfil')
         .then(res => res.json())
         .then(data => {
             // Atualizar perfil
-            document.querySelector(".profile-name").textContent = data.nome;
-            document.querySelector(".profile-description").textContent = data.descricao;
+            document.querySelector(".nome-perfil").textContent = data.nome;
+            document.querySelector(".descricao-perfil").textContent = data.descricao;
 
             // Atualizar a imagem de perfil
-            const profileImage = document.querySelector(".profile-image");
-            if (profileImage) {
-                profileImage.src = data.imagem;
-                profileImage.alt = `Foto de ${data.nome}`;
+            const imagemPerfil = document.querySelector(".imagem-perfil");
+            if (imagemPerfil) {
+                imagemPerfil.src = data.imagem;
+                imagemPerfil.alt = `Foto de ${data.nome}`;
             }
 
             // Atualizar links e ícones das redes sociais
@@ -88,9 +83,9 @@ document.addEventListener("DOMContentLoaded", function(){
             document.querySelector(".twitter img").src = data.redesSociais.twitter.icone;
 
             // Atualizar Introdução
-            document.querySelector(".intro-title").textContent = data.introducao.titulo;
-            document.querySelector(".intro-subtitle").textContent = data.introducao.subtitulo;
-            document.querySelector(".about-me").innerHTML = data.introducao.sobreMim;
+            document.querySelector(".titulo-introducao").textContent = data.introducao.titulo;
+            document.querySelector(".subtitulo-introducao").textContent = data.introducao.subtitulo;
+            document.querySelector(".sobre-mim").innerHTML = data.introducao.sobreMim;
             document.querySelector(".curriculo").href = data.introducao.links.curriculo;
             document.querySelector(".projetos").href = data.introducao.links.projetos;
         })

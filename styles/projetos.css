@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-/*Animação de entrada*/
+/* Animação de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -38,7 +38,7 @@ body {
     color: var(--cor-primaria);
 }
 
-.main-container {
+.container-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,27 +49,27 @@ body {
     margin: 0 auto;
 }
 
-.intro-section {
+.secao-introducao {
     width: 60%;
     text-align: center;
     margin-top: 5vh;
     max-width: 40vw;
 }
 
-.main-title {
+.titulo-principal {
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
     font-size: 2rem;
 }
 
-.main-paragraph {
+.paragrafo-principal {
     padding-top: 5vh;
     font-family: var(--fonte-secundaria);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
-.project-card {
+.cartao-projeto {
     background-color: var(--cor-secundaria);
     width: 55%;
     display: flex;
@@ -82,13 +82,13 @@ body {
     animation: fadeIn 0.8s ease-in-out forwards;
 }
 
-.project-card:hover {
+.cartao-projeto:hover {
     transform: scale(1.05);
     box-shadow: 0 2rem 1.5rem rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-text {
+.texto-projeto {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ body {
     padding: 2vw;
 }
 
-.project-title {
+.titulo-projeto {
     font-family: var(--fonte-primaria);
     font-weight: bold;
     color: var(--cor-terciaria);
@@ -105,7 +105,7 @@ body {
     padding-left: 1.5vw;
 }
 
-.project-title::before {
+.titulo-projeto::before {
     content: "";
     position: absolute;
     left: 0;
@@ -116,68 +116,68 @@ body {
     background-color: var(--cor-terciaria);
 }
 
-.project-paragraph {
+.paragrafo-projeto {
     font-family: var(--fonte-secundaria);
     font-size: 0.8rem;
     line-height: 1.5;
 }
 
-.project-image {
+.imagem-projeto {
     width: 40%;
     max-width: 18vw;
     border-radius: 10px;
 }
 
 @media (max-width: 1024px) {
-    .intro-section {
+    .secao-introducao {
         width: 30%;
     }
 
-    .project-card {
+    .cartao-projeto {
         flex-direction: column;
         text-align: center;
         padding: 3%;
     }
 
-    .project-text {
+    .texto-projeto {
         width: 100%;
     }
 
-    .project-image {
+    .imagem-projeto {
         width: 90%;
         max-width: none;
     }
 }
 
 @media (max-width: 768px) {
-    .main-title {
+    .titulo-principal {
         font-size: 2rem;
     }
 
-    .main-paragraph {
+    .paragrafo-principal {
         font-size: 1rem;
     }
 
-    .project-title {
+    .titulo-projeto {
         font-size: 1.5rem;
     }
 
-    .project-paragraph {
+    .paragrafo-projeto {
         font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .intro-section {
+    .secao-introducao {
         width: 90%;
     }
 
-    .project-card {
+    .cartao-projeto {
         width: 95%;
         padding: 5%;
     }
 
-    .project-image {
+    .imagem-projeto {
         width: 100%;
     }
 }
