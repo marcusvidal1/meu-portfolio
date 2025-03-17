@@ -17,7 +17,7 @@ const dadosPerfil = {
             icone: "https://i.postimg.cc/DwBYHRSV/instagram.png"
         },
         github: {
-            url: "https://github.com/seuUsuario",
+            url: "https://github.com/marcusvidal1",
             icone: "https://i.postimg.cc/6p9mHB5L/github.png"
         },
         linkedin: {

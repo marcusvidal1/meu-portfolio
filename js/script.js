@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Carregar dados da API e atualizar o perfil
+//dados da API e atualizar o perfil
 document.addEventListener("DOMContentLoaded", function () {
     fetch('http://localhost:3000/perfil')
         .then(res => res.json())
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imagemPerfil.alt = `Foto de ${data.nome}`;
             }
 
-            // Atualizar links e ícones das redes sociais
+            // links e ícones das redes sociais
             const redes = ["instagram", "github", "linkedin", "twitter"];
             redes.forEach(rede => {
                 const link = document.querySelector(`.${rede}`);
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Atualizar introdução
+            //introdução
             document.querySelector(".titulo-introducao").textContent = data.introducao.titulo;
             document.querySelector(".subtitulo-introducao").textContent = data.introducao.subtitulo;
             document.querySelector(".sobre-mim").innerHTML = data.introducao.sobreMim;

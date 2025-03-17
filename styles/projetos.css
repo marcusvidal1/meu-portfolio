@@ -38,6 +38,29 @@ body {
     color: var(--cor-primaria);
 }
 
+.home-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.home-icon:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
 /* Botão de alternância de tema */
 .botao-tema {
     position: fixed;
@@ -166,16 +189,18 @@ body {
     border-radius: 10px;
 }
 
-/* Responsividade */
+
+/* Responsividade para Tablets */
 @media (max-width: 1024px) {
     .secao-introducao {
-        width: 30%;
+        width: 80%;
     }
 
     .cartao-projeto {
         flex-direction: column;
         text-align: center;
-        padding: 3%;
+        padding: 4%;
+        width: 80%;
     }
 
     .texto-projeto {
@@ -183,40 +208,103 @@ body {
     }
 
     .imagem-projeto {
-        width: 90%;
+        width: 80%;
         max-width: none;
     }
 }
 
+/* Responsividade para Celulares Médios (Ex: iPhone, Android Médio) */
 @media (max-width: 768px) {
     .titulo-principal {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        text-align: center;
     }
 
     .paragrafo-principal {
         font-size: 1rem;
+        text-align: center;
     }
 
     .titulo-projeto {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .paragrafo-projeto {
         font-size: 0.9rem;
     }
-}
-
-@media (max-width: 480px) {
-    .secao-introducao {
-        width: 90%;
-    }
 
     .cartao-projeto {
-        width: 95%;
+        width: 90%;
         padding: 5%;
     }
 
     .imagem-projeto {
+        width: 90%;
+    }
+
+    /* Ajuste no botão Home */
+    .home-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Ajuste no botão de alternância de tema */
+    .botao-tema {
+        top: 15px;
+        right: 15px;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Responsividade para Celulares Pequenos (Ex: iPhone SE, Android pequeno) */
+@media (max-width: 480px) {
+    .secao-introducao {
+        width: 95%;
+    }
+
+    .cartao-projeto {
         width: 100%;
+        padding: 6%;
+    }
+
+    .titulo-principal {
+        font-size: 1.6rem;
+    }
+
+    .paragrafo-principal {
+        font-size: 0.9rem;
+    }
+
+    .titulo-projeto {
+        font-size: 1rem;
+    }
+
+    .paragrafo-projeto {
+        font-size: 0.8rem;
+    }
+
+    .imagem-projeto {
+        width: 100%;
+    }
+
+    /* Ajuste no botão Home */
+    .home-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* Ajuste no botão de alternância de tema */
+    .botao-tema {
+        top: 10px;
+        right: 10px;
+        padding: 7px;
+        font-size: 13px;
     }
 }

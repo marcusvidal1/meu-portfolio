@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Buscar projetos do GitHub e exibir na página
+// Buscar projetos GitHub e exibir na página
 document.addEventListener("DOMContentLoaded", function () {
     const usuario = "marcusvidal1";
     fetch(`https://api.github.com/users/${usuario}/repos`)
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// Buscar projetos da API local
+//projetos da API local
 document.addEventListener("DOMContentLoaded", function () {
     fetch('http://localhost:3000/projetos')
         .then(res => res.json())
