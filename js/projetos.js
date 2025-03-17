@@ -1,58 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Criar botão para alternar o tema
-    const botaoTema = document.createElement("button");
-    botaoTema.innerText = "Alternar Tema";
-    botaoTema.style.position = "fixed";
-    botaoTema.style.top = "10px";
-    botaoTema.style.right = "10px";
-    botaoTema.style.padding = "10px";
-    botaoTema.style.backgroundColor = "#22D4FD";
-    botaoTema.style.color = "#1B262C";
-    botaoTema.style.border = "none";
-    botaoTema.style.cursor = "pointer";
-    botaoTema.style.borderRadius = "5px";
-    botaoTema.style.fontSize = "16px";
-    botaoTema.style.fontWeight = "bold";
+    const botaoTema = document.getElementById("botao-tema");
 
-    document.body.appendChild(botaoTema);
+    // Verifica o tema salvo no localStorage e aplica
+    if (localStorage.getItem("tema") === "claro") {
+        document.body.classList.add("modo-claro");
+        botaoTema.innerText = "Modo Escuro";
+    }
 
-    // Alternar o tema
     botaoTema.addEventListener("click", function () {
         document.body.classList.toggle("modo-claro");
-        document.querySelectorAll(".cartao-projeto").forEach(cartao => {
-            cartao.classList.toggle("cartao-claro");
-        });
-        document.querySelector(".titulo-principal").classList.toggle("titulo-claro");
 
-        // Atualizar texto do botão
+        // Atualiza o texto do botão e salva a escolha no localStorage
         if (document.body.classList.contains("modo-claro")) {
             botaoTema.innerText = "Modo Escuro";
-            botaoTema.style.backgroundColor = "#0057FF";
-            botaoTema.style.color = "white";
+            localStorage.setItem("tema", "claro");
         } else {
             botaoTema.innerText = "Modo Claro";
-            botaoTema.style.backgroundColor = "#22D4FD";
-            botaoTema.style.color = "#1B262C";
+            localStorage.setItem("tema", "escuro");
         }
     });
-
-    // Estilos do modo claro
-    const estiloModoClaro = document.createElement("style");
-    estiloModoClaro.innerHTML = `
-        .modo-claro {
-            background: linear-gradient(to bottom, #F6F6F6 20%, #D9D9D9 100%) !important;
-            color: black;
-        }
-        .cartao-claro {
-            background-color: white !important;
-            color: black;
-            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
-        }
-        .titulo-claro {
-            color: #0057FF !important;
-        }
-    `;
-    document.head.appendChild(estiloModoClaro);
 });
 
 // Buscar projetos do GitHub e exibir na página
@@ -98,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+// Buscar projetos da API local
 document.addEventListener("DOMContentLoaded", function () {
     fetch('http://localhost:3000/projetos')
         .then(res => res.json())

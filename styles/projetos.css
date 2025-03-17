@@ -38,6 +38,44 @@ body {
     color: var(--cor-primaria);
 }
 
+/* Botão de alternância de tema */
+.botao-tema {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* MODO CLARO */
+.modo-claro {
+    background: linear-gradient(to bottom, #F6F6F6 20%, #D9D9D9 100%) !important;
+    color: black;
+}
+
+/* Alterações para o modo claro */
+.modo-claro .cartao-projeto {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.modo-claro .titulo-principal {
+    color: #0057FF !important;
+}
+
+.modo-claro .botao-tema {
+    background-color: #0057FF;
+    color: white;
+}
+
+/* Estilos do layout */
 .container-principal {
     display: flex;
     flex-direction: column;
@@ -128,6 +166,7 @@ body {
     border-radius: 10px;
 }
 
+/* Responsividade */
 @media (max-width: 1024px) {
     .secao-introducao {
         width: 30%;

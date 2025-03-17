@@ -13,6 +13,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -22,6 +23,44 @@ body {
     margin: 0;
 }
 
+/* Botão de alternância de tema */
+.botao-tema {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Modo Claro */
+.modo-claro {
+    background: linear-gradient(to right, #F6F6F6 40%, #D9D9D9 40%) !important;
+    color: black;
+}
+
+/* Alterações para o modo claro */
+.modo-claro .cartao-perfil {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.modo-claro .titulo-introducao {
+    color: #0057FF !important;
+}
+
+.modo-claro .botao-tema {
+    background-color: #0057FF;
+    color: white;
+}
+
+/* Estilos do layout do portfólio */
 .conteudo-principal {
     height: 100%;
     width: 100%;
@@ -73,7 +112,7 @@ body {
     justify-content: center;  
     flex-direction: column;
     width: 100%;
-    padding-top: 9.5vh; 
+    padding-top: 10vh; 
     font-size: 0.8rem;
     font-family: var(--fonte-secundaria);
 }
@@ -147,6 +186,7 @@ body {
     font-size: 2.7vh;
     width: 35vw;
 }
+
 
 @media (max-width: 768px) {
     .container-conteudo {
